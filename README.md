@@ -50,7 +50,7 @@
    ---> in each input tag, just need to declare input type, remaining just call register('name_of_input'). Register is a function that return an objects, use spread operator to spread all properties of this object onto input tag
 
    ---> properties of object returned by register function: refs(the ref provides a way to interact with the input programmatically), onChange, name, onBlur
-14. react-router-dom: install the router-dom-> provides Routers component which contains individual Router(path, component) + useNavigate hook which returns function navigate -> button's onClick property
+14.  react-router-dom: install the router-dom-> provides Routers component which contains individual Router(path, component) + useNavigate hook which returns function navigate -> button's onClick property
 - react-router-dom: no useNavigate -> Link tag which has 'to' property which url path can be passed
 - custom-router component -> useRoutes hook which takes array of route objects. Each route objects has properties: path, component,children
 - dynamic routing /:id -> useParam hook which returns object contains id property
