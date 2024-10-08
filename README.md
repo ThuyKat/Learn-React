@@ -51,10 +51,10 @@
 
    ---> properties of object returned by register function: refs(the ref provides a way to interact with the input programmatically), onChange, name, onBlur
 14.  react-router-dom: install the router-dom-> provides Routers component which contains individual Router(path, component) + useNavigate hook which returns function navigate -> button's onClick property
-- react-router-dom: no useNavigate -> Link tag which has 'to' property which url path can be passed
-- custom-router component -> useRoutes hook which takes array of route objects. Each route objects has properties: path, component,children
-- dynamic routing /:id -> useParam hook which returns object contains id property
--  extract url path and params -> useLocation.pathname/useLocation.search
+    - react-router-dom: no useNavigate -> Link tag which has 'to' property which url path can be passed
+    - custom-router component -> useRoutes hook which takes array of route objects. Each route objects has properties: path, component,children
+    - dynamic routing /:id -> useParam hook which returns object contains id property
+    -  extract url path and params -> useLocation.pathname/useLocation.search
 15. enhance performance with useMemo hook: data is fetched -> filter -> map: multiple expensive computing steps 
         // state changed -> trigger re-rendering of function -> slow down the apps
 
