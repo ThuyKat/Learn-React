@@ -47,9 +47,9 @@
 12. dynamic form: generate all input tags using single formular so that we can use to generate different forms: login/register form
 13. react-hook-form: install hook-form -> useForm hook returns object which can be destructured into 3 variables: formData(register,login), handleSubmit(prevend default submit, validate, call custom onSubmit funciton once validation passed, )
 
-   ---> in each input tag, just need to declare input type, remaining just call register('name_of_input'). Register is a function that return an objects, use spread operator to spread all properties of this object onto input tag
+    ---> in each input tag, just need to declare input type, remaining just call register('name_of_input'). Register is a function that return an objects, use spread operator to spread all properties of this object onto input tag
 
-   ---> properties of object returned by register function: refs(the ref provides a way to interact with the input programmatically), onChange, name, onBlur
+    ---> properties of object returned by register function: refs(the ref provides a way to interact with the input programmatically), onChange, name, onBlur
 
 14.  react-router-dom: install the router-dom-> provides Routers component which contains individual Router(path, component) + useNavigate hook which returns function navigate -> button's onClick property
     - react-router-dom: no useNavigate -> Link tag which has 'to' property which url path can be passed
@@ -96,6 +96,22 @@ const memoizedArray = useMemo(() => [1, 2, 3, ...data], [data]);
 18. toast is popsup message lib provided by ReactToastify -> install this lib -> include ToastContainer component in Apps -> download css of the toast -> import toast in components where it is used
 19.  css-tailwind install
 20.  shopping cart: npm i react-router-dom -> 3 pages: product list, product detail, cart
+# React Best Practices
+1. Immutability
+- React relies on immutability for efficient change detection. Therefore, we avoid modify the state directly, but we use setState function to update its value. If we do modify the state directly, React might not recognize the change, leading to components not re-rendering when they should. 
+- Another reason is that React uses shallow comparison to determine if state has change. While mutating an object doesn't change its reference, React might not detect the change --> component will not be re-rendered
+2. Batch update
+- when we pass argument to setState, the state update is scheduled. Batches updates is good for performance
+3. Using key in list rendering
+- When updating a list, React needs a key property for each list item ( such as its ID) to differenciate between them. Key is the identity of each component. When a list is re-rendered, those keys are used to compared with previous list's items. 
+        -> If a match is found, the item will get updated.
+
+        ->  If a key exists in previous list but now missing, the previous component will get destroyed.
+        
+        ->  If a key exists in current list but not previous list, a new component will be created.
+---> always assign proper keys when buiding dynamic lists 
+- If no key is specified, React will report an error and use the array index as a key by default -> create problem when the list is sorted or inserting/removing items. 
+
 
 
 
