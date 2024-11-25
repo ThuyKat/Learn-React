@@ -23,6 +23,28 @@ git push --set-upstream origin <branch_name>
 - Integration Tests: tests interaction between components
 - End-to-end Tests
 5. Test libs: already installed when React apps installed
+    FOR USING OUTSIDE REACT: 
+        1. Install Jest: npm install --save-dev jest
+        2. Package.json config:
+            {
+            "scripts": {
+                "test": "jest",
+                "test:watch": "jest --watch"
+            }
+            }
+        3. Basic structure: test(description_what_to_test, callback function)
+            The callback function bodies:
+            - expect(logic statement).toBe(result) -> exact equality
+            - expect(object).toEqual(objet); -> matching object
+            - expect(true).toBeTruthy(); 
+            - expect(false).toBeFalsy();
+            - expect(number).toBeGreaterThan(number);
+            - expect(number).toBeLessThan(number);
+            - expect(string).toMatch(/string_content/);
+            - expect(array).toContain(element);
+            - expect(()=> throwError()).toThrow();
+
+
 6. Test script -> run the script: npm run test
 7. App.test.js file -> copy and post in components folder, rename it as Component.test.js -> to make it clear that this test file is meant for the component that the test is named after. In this file, you can test the component’s functionality, user interactions, or rendering behavior.
 8. Structure of a test: 
